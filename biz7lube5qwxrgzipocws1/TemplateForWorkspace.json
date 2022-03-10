@@ -1087,20 +1087,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/PowerBIWorkspaceTripsFares')]",
-			"type": "Microsoft.Synapse/workspaces/linkedServices",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"annotations": [],
-				"type": "PowerBIWorkspace",
-				"typeProperties": {
-					"workspaceID": "",
-					"tenantID": "72f988bf-86f1-41af-91ab-2d7cd011db47"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('workspaceName'), '/TripFaresDataLakeStorageLinkedService')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
@@ -1307,22 +1293,21 @@
 					"type": "BigDataPoolReference"
 				},
 				"sessionProperties": {
-					"driverMemory": "56g",
-					"driverCores": 8,
-					"executorMemory": "56g",
-					"executorCores": 8,
+					"driverMemory": "28g",
+					"driverCores": 4,
+					"executorMemory": "28g",
+					"executorCores": 4,
 					"numExecutors": 2,
 					"conf": {
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
-						"spark.dynamicAllocation.maxExecutors": "2"
+						"spark.dynamicAllocation.maxExecutors": "2",
+						"spark.autotune.trackingId": "41f72ea5-f518-4ed2-844b-779024e5b17d"
 					}
 				},
 				"metadata": {
 					"saveOutput": true,
-					"synapse_widget": {
-						"version": "0.1"
-					},
+					"enableDebugMode": false,
 					"kernelspec": {
 						"name": "synapse_pyspark",
 						"display_name": "Synapse PySpark"
@@ -1331,18 +1316,18 @@
 						"name": "python"
 					},
 					"a365ComputeOptions": {
-						"id": "/subscriptions/4eeedd72-d937-4243-86d1-c3982a84d924/resourceGroups/nashahzsfin/providers/Microsoft.Synapse/workspaces/mfstspdjvzuh3xeu2pocws1/bigDataPools/ws1sparkpool1",
+						"id": "/subscriptions/4f5837d0-ab7b-48ec-938f-76596909bc20/resourceGroups/PoC-Synapse-East/providers/Microsoft.Synapse/workspaces/biz7lube5qwxrgzipocws1/bigDataPools/ws1sparkpool1",
 						"name": "ws1sparkpool1",
 						"type": "Spark",
-						"endpoint": "https://mfstspdjvzuh3xeu2pocws1.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ws1sparkpool1",
+						"endpoint": "https://biz7lube5qwxrgzipocws1.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ws1sparkpool1",
 						"auth": {
 							"type": "AAD",
 							"authResource": "https://dev.azuresynapse.net"
 						},
 						"sparkVersion": "2.4",
 						"nodeCount": 5,
-						"cores": 8,
-						"memory": 56
+						"cores": 4,
+						"memory": 28
 					},
 					"sessionKeepAliveTimeout": 30
 				},
@@ -1626,7 +1611,7 @@
 							"plt.show()"
 						],
 						"outputs": [],
-						"execution_count": null
+						"execution_count": 11
 					}
 				]
 			},
@@ -1649,6 +1634,20 @@
 			"type": "Microsoft.Synapse/workspaces/managedVirtualNetworks",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/PowerBIWorkspaceTripsFares')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "PowerBIWorkspace",
+				"typeProperties": {
+					"workspaceID": "5e7a1df4-2056-4fd2-bc5a-282da10b866c",
+					"tenantID": "a8b0bc19-d2d1-4b37-97c4-077d0373a34d"
+				}
+			},
 			"dependsOn": []
 		}
 	]
