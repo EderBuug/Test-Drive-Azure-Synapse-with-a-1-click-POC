@@ -465,7 +465,7 @@
 			},
 			"SynapseWorkspaceName": {
 				"type": "string",
-				"defaultValue": "biz7lube5qwxrgzipocws1.data.biz.mx"
+				"defaultValue": "biz7lube5qwxrgzipoc.dfs.core.windows.net"
 			},
 			"SQLDedicatedPoolName": {
 				"type": "string",
